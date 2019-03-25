@@ -43,6 +43,8 @@ BuildRequires:  python3dist(toml)
 BuildRequires:  python3dist(toml)
 BuildRequires:  python3dist(toml)
 BuildRequires:  python3dist(sphinx)
+# For docs
+Buildrequires:  python3dist(django)
 
 %description
 [![Dynaconf]( **dynaconf** - The **dyna**mic **conf**igurator for your Python
