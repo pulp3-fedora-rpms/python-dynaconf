@@ -8,7 +8,8 @@ Summary:        The dynamic configurator for your Python Project
 
 License:        MIT
 URL:            https://github.com/rochacbruno/dynaconf
-Source0:        https://files.pythonhosted.org/packages/source/d/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+# Docs are missing from pypi
+Source0:        https://github.com/rochacbruno/%{pypi_name}/archive/%{version}.tar.gz
 BuildArch:      noarch
  
 BuildRequires:  python3-devel
