@@ -1,0 +1,24 @@
+From 14d4e6aa9d96946fa1a73cbec94e87552dc0fb21 Mon Sep 17 00:00:00 2001
+From: Mike DePaulo <mikedep333@redhat.com>
+Date: Tue, 26 Mar 2019 14:02:36 -0400
+Subject: [PATCH 2/2] aafig.py: Fix for recent docutils version
+
+---
+ docs/customexts/aafig.py | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/docs/customexts/aafig.py b/docs/customexts/aafig.py
+index 203c6f7..29a7aa4 100644
+--- a/docs/customexts/aafig.py
++++ b/docs/customexts/aafig.py
+@@ -32,6 +32,7 @@ except ImportError:
+ 
+ from docutils import nodes
+ from docutils.parsers.rst import directives
++from docutils.parsers.rst.directives import images
+ 
+ from sphinx.errors import SphinxError
+ from sphinx.util import ensuredir, relative_uri
+-- 
+2.20.1
+

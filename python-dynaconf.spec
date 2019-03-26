@@ -10,7 +10,8 @@ License:        MIT
 URL:            https://github.com/rochacbruno/dynaconf
 # Docs are missing from pypi
 Source0:        https://github.com/rochacbruno/%{pypi_name}/archive/%{version}.tar.gz
-Patch1:         0001-Fix-error-during-sphinx-build-3.patch
+Patch1:         0001-Remove-prior-versions-of-aafig.py-that-are-Python3-i.patch
+Patch2:         0002-aafig.py-Fix-for-recent-docutils-version.patch
 BuildArch:      noarch
  
 BuildRequires:  python3-devel
@@ -49,6 +50,13 @@ BuildRequires:  python3dist(sphinx)
 Buildrequires:  python3dist(aafigure)
 Buildrequires:  python3dist(django)
 Buildrequires:  python3dist(recommonmark)
+# For tests
+Buildrequires:  python3dist(tox)
+# For tests as well. See requirements_dev.txt
+Buildrequires:  python3dist(codecov)
+Buildrequires:  python3dist(pytest-cov)
+Buildrequires:  python3dist(pytest-xdist)
+Buildrequires:  python3dist(logzero)
 
 %description
 [![Dynaconf]( **dynaconf** - The **dyna**mic **conf**igurator for your Python
@@ -101,7 +109,7 @@ rm -rf html/.{doctrees,buildinfo}
 %py3_install
 
 %check
-%{__python3} setup.py test
+tox -e py%{python3_version_nodots}
 
 %files -n python3-%{pypi_name}
 %license LICENSE
