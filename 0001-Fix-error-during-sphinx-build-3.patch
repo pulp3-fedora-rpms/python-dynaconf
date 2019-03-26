@@ -1,0 +1,26 @@
+From ec4ac16ee7dde36df52241bfe5d7b10142f6dbf4 Mon Sep 17 00:00:00 2001
+From: Mike DePaulo <mikedep333@redhat.com>
+Date: Tue, 26 Mar 2019 12:17:07 -0400
+Subject: [PATCH] Fix error during sphinx-build-3
+
+TabError: inconsistent use of tabs and spaces in indentation
+---
+ docs/customexts/aafig-pre-transform.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docs/customexts/aafig-pre-transform.py b/docs/customexts/aafig-pre-transform.py
+index b75a9d9..9db64fa 100644
+--- a/docs/customexts/aafig-pre-transform.py
++++ b/docs/customexts/aafig-pre-transform.py
+@@ -139,7 +139,7 @@ def render_aafigure(self, text, options):
+ 
+     try:
+         (visitor, output) = aafigure.render(text, outfn, options)
+-	output.close()
++        output.close()
+     except aafigure.UnsupportedFormatError, e:
+         raise AafigError(str(e))
+ 
+-- 
+2.20.1
+

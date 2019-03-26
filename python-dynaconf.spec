@@ -10,6 +10,7 @@ License:        MIT
 URL:            https://github.com/rochacbruno/dynaconf
 # Docs are missing from pypi
 Source0:        https://github.com/rochacbruno/%{pypi_name}/archive/%{version}.tar.gz
+Patch1:         0001-Fix-error-during-sphinx-build-3.patch
 BuildArch:      noarch
  
 BuildRequires:  python3-devel
@@ -85,7 +86,7 @@ Summary:        dynaconf documentation
 Documentation for dynaconf
 
 %prep
-%autosetup -n %{pypi_name}-%{version}
+%autosetup -S git -n %{pypi_name}-%{version}
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
