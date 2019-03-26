@@ -45,6 +45,7 @@ BuildRequires:  python3dist(toml)
 BuildRequires:  python3dist(toml)
 BuildRequires:  python3dist(sphinx)
 # For docs
+Buildrequires:  python3dist(aafigure)
 Buildrequires:  python3dist(django)
 Buildrequires:  python3dist(recommonmark)
 
