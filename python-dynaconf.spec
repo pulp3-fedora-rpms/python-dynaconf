@@ -16,7 +16,6 @@ BuildArch:      noarch
  
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(click)
-BuildRequires:  python3dist(codecov)
 BuildRequires:  python3dist(configobj)
 BuildRequires:  python3dist(configobj)
 BuildRequires:  python3dist(configobj)
