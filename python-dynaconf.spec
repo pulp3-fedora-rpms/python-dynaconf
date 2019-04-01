@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        1.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        The dynamic configurator for your Python Project
 
 License:        MIT
@@ -87,7 +87,7 @@ Summary:        dynaconf documentation
 Documentation for dynaconf
 
 %prep
-%autosetup -S git -n %{pypi_name}-%{version}
+%autosetup -p1 -n %{pypi_name}-%{version}
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
@@ -120,5 +120,8 @@ rm -rf html/.{doctrees,buildinfo}
 %license LICENSE
 
 %changelog
+* Mon Apr 01 2019 Mike DePaulo <mikedep333@redhat.com> - 1.2.1-2
+- Fix build on Fedora 31 by not using autosetup -p1 rather than -S git
+
 * Thu Mar 21 2019 Mike DePaulo <mikedep333@redhat.com> - 1.2.1-1
 - Initial package.
